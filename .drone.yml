@@ -12,6 +12,7 @@ steps:
   - name: build binary with golang image
     image: golang:1.16
     commands:
+      - go mod init
       - GOPATH="" CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
   - name: plugin
     image: plugins/docker
@@ -19,7 +20,7 @@ steps:
       dry_run: true
       repo: foo/bar
       tags: latest
-      dockerfile: docker/Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - name: cache
         path: /go
