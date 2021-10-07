@@ -12,14 +12,14 @@ steps:
   - name: build binary with golang image
     image: golang:1.16
     commands:
-      - GOPATH="" CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o release/linux/amd64/drone-runner-aws
+      - GOPATH="" CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
   - name: plugin
     image: plugins/docker
     settings:
       dry_run: true
       repo: foo/bar
       tags: latest
-      dockerfile: docker/Dockerfile.linux.amd64
+      dockerfile: docker/Dockerfile
     volumes:
       - name: cache
         path: /go
