@@ -1,4 +1,3 @@
----
 kind: pipeline
 type: aws
 name: ubuntu instance acceptance tests
