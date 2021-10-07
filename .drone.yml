@@ -2,7 +2,7 @@ kind: pipeline
 type: aws
 name: ubuntu instance acceptance tests
 
-instance:
+pool:
   use: ubuntu
 
 steps:
@@ -47,11 +47,8 @@ kind: pipeline
 type: aws
 name: windows instance acceptance tests
 
-instance:
+pool:
   use: windows
-
-platform:
-  os: windows
 
 steps:
   - name: check install
