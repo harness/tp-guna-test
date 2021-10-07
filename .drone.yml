@@ -1,6 +1,6 @@
 kind: pipeline
 type: aws
-name: ubuntu instance acceptance tests
+name: ubuntu 20.04
 
 pool:
   use: ubuntu
@@ -39,13 +39,10 @@ volumes:
 - name: cache
   temp: {}
 
-depends_on:
-- unit tests
-
 ---
 kind: pipeline
 type: aws
-name: windows instance acceptance tests
+name: windows 2019
 
 pool:
   use: windows
